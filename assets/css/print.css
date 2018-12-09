@@ -1,0 +1,46 @@
+body {
+  color: #333;
+  font-family: Helvetica Neue, sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+}
+
+@page {
+  size: A5 portrait;
+  margin: 1.2cm;
+}
+
+@page:left {
+  @bottom-center { 
+    margin: 10pt 0 30pt 0;
+    content: counter(page);
+  }
+}
+
+h1 {
+  page-break-before: always;
+  text-align: center;
+}
+
+h1 + p::first-letter {
+  font-size: 19pt;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+}
+
+figure, img {
+  display: block;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+}
+
+img.portrait {
+  width: 101mm;
+  height: 135mm;
+}
