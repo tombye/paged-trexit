@@ -7,40 +7,69 @@ body {
 
 @page {
   size: A5 portrait;
-  margin: 1.2cm;
-}
+  margin: 15mm;
 
-@page:left {
   @bottom-center { 
     margin: 10pt 0 30pt 0;
     content: counter(page);
   }
 }
 
-h1 {
-  page-break-before: always;
-  text-align: center;
+@page :left {
+  margin-left: 18mm;
 }
 
-h1 + p::first-letter {
-  font-size: 19pt;
-  font-weight: 600;
+@page :right {
+  margin-right: 18mm;
 }
 
 h1, h2, h3, h4, h5, h6 {
   page-break-after: avoid;
 }
 
-figure, img {
+h1.chapter,
+h2 {
+  page-break-before: always;
+  font-size: 19pt;
+  text-align: center;
+}
+
+h1.chapter {
+  page-break-after: always;
+  margin-top: 251pt;
+}
+
+h2 {
+  margin: 5mm 0 15mm;
+}
+
+h2 + p::first-letter {
+  font-size: 19pt;
+  font-weight: 600;
+  padding-right: 0.05em;
+}
+
+figure,
+img {
   display: block;
 }
 
 figure {
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  background-color: red;
+  page-break-after: always;
+}
+
+p {
+  margin-bottom: 18px;
 }
 
 img.portrait {
-  width: 101mm;
-  height: 135mm;
+  width: 111mm;
+  height: 180mm;
+}
+
+.blank {
+  page-break-before: always;
+  page-break-after: always;
 }
